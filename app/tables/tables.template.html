@@ -1,0 +1,48 @@
+<div>
+    <p>tables template</p>
+    {{ test }}
+    <br>
+    {{ data }}
+</div>
+
+
+<!-- <div>
+    <div ng-controller='orgController as data'>
+      <h2>Certification Page</h2>
+      <h4>{{ data.org.orgName }}</h4>
+      <p>Total Number of Facilities: {{ data.totalFacilities }}</p>
+      <ul>
+        <li ng-repeat="suborg in data.org.suborgs">{{ suborg.suborgName }}
+          <ul>
+            <li ng-repeat="facility in suborg.facilities">{{ facility.facilityName }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <hr>
+    <div ng-controller="tableController">
+      <input type="button" ng-click="expandCollapseAll()" id="expandCollapse" value="Collapse All"></input>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th>suborgId</th>
+            <th>Name</th>
+            <th>Total Facilities</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <hr>
+    <div ng-controller="formController as facility">
+      <h4>Add Facility</h4>
+      <form novalidate class="simple-form">
+        <label>Organization: <input type="text" ng-model="facility.orgId" /></label><br>
+        <label>Suborganization: <input type="text" ng-model="facility.suborgId"/></label><br>
+        <label>Facility Name: <input type="text" ng-model="facility.name" /></label><br>
+        <br>
+        <input type="button" ng-click="reset()" value="Reset" />
+        <input type="submit" ng-click="facility.addFacility()" />
+      </form>
+    </div>
+</div> -->

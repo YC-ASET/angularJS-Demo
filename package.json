@@ -1,0 +1,23 @@
+{
+  "name": "angularjs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "datatables.net-bs": "^1.10.19",
+    "angular": "1.7.7",
+    "angular-animate": "1.7.7",
+    "angular-resource": "1.7.7",
+    "angular-route": "1.7.7",
+    "bootstrap": "3.3.x",
+    "jquery": "3.3.x"
+  }
+}

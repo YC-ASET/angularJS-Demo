@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app='demoApp'>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <!--Dependencies-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="lib/angular.js"></script>
+
+    <script src="lib/angular-animate.js"></script>
+    <script src="lib/angular-resource.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+
+    <!--AngularJS Modules and Components-->
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="services/services.module.js"></script>
+    <script src="services/http.service.js"></script>
+    <script src="maps/maps.module.js"></script>
+    <script src="maps/maps.component.js"></script>
+    <script src="tables/tables.module.js"></script>
+    <script src="tables/tables.component.js"></script>
+
+
+    <title>Demo App</title>
+  </head>
+  <body>
+    <div class="view-container">
+      <p>View Frame</p>
+      <div ng-view class="view-frame"></div>
+    </div>
+  </body>
+</html>
