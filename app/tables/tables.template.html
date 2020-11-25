@@ -1,10 +1,27 @@
-<div>
+<div style="background-color: lightgreen;">
     <p>tables template</p>
-    {{ test }}
-    <br>
-    {{ data }}
+    Total Number of Facilities for {{ data.orgName }}: {{ totalFacilities }}
+    <!-- <hr>
+    {{ data }} -->
 </div>
-
+<hr>
+<div>
+      <!-- <input type="button" ng-click="clickTest()" id="expandCollapse" value="Collapse All"></input> -->
+      
+      <button id="btn-show-all-children" type="button">Expand/Collapse All</button>
+      <!-- <button id="btn-hide-all-children" type="button">Collapse All</button> -->
+      <hr>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Sub-Organization</th>
+            <th>Total Facilities</th>
+            <th>Map</th>
+          </tr>
+        </thead>
+      </table>
+</div>
 
 <!-- <div>
     <div ng-controller='orgController as data'>

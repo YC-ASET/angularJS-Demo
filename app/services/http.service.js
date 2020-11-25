@@ -6,13 +6,15 @@ angular.module('servicesModule', [])
 
 function HttpService($http, ApiBasePath) {
     
-
     this.getFacilities = function() {
         var response = $http({
             method: "GET",
             url: (ApiBasePath + "/orgs/2")
         });
         return response;
-    }
+    };
+
+    // add CRUD methods here following the above GET format
+
 }
 
