@@ -2,22 +2,16 @@
 angular.module('tables')
     .component('tables', {
         templateUrl: 'tables/tables.template.html',
-
-
-        controller: ['$scope','Http', function tableController($scope, Http) {
-            $scope.test = "hello from controller";
-            // let data = Http.get();
-            // console.log(data)
-            $scope.data = Http.get()
-        }]
-
-        // controller: ['$scope', 'httpService', function tableController($scope, httpService) {
-        //     $scope.test = "test from tableController"
+        controller: ['$scope', 'HttpService', function tableController($scope, HttpService) {
+            $scope.test = "test from tableController"
+            $scope.data;
             
-        //     // httpService.getFacilities
-        //     //     .then(data => console.log(data))
+            HttpService.getFacilities()
+                .then(data => {
+                    $scope.data = data.data    
+                })
 
-        // }]
+        }]
     })
 
     // orgController.$inject = ['FacilitiesService'];

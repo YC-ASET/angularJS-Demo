@@ -1,41 +1,18 @@
 'use strict';
 
-angular.module('servicesModule')
+angular.module('servicesModule', [])
     .constant('ApiBasePath', "http://localhost:3000")
-    .factory('Http', ['$resource', 'ApiBasePath', Http])
+    .service('HttpService', ['$http', 'ApiBasePath', HttpService])
 
-function Http ($resource, ApiBasePath) {
-
-    return $resource(ApiBasePath + "/orgs/2", {}, {
-        query: {
-            method: 'GET',
-            isArray: true
-        }
-    })
-
+function HttpService($http, ApiBasePath) {
     
-    // let service = this;
 
-    // service.getFacilities = function () {
-    //     return $resource(ApiBasePath + "/orgs/2", {}, {
-    //         query: {
-    //           method: 'GET',
-    //           isArray: true
-    //         }
-    //       })
-
-    // }
+    this.getFacilities = function() {
+        var response = $http({
+            method: "GET",
+            url: (ApiBasePath + "/orgs/2")
+        });
+        return response;
+    }
 }
 
-// angular.
-//   module('servicesModule').
-//   factory('Http', ['$resource',
-//     function($resource) {
-//       return $resource("http://localhost:3000/orgs/2", {}, {
-//         query: {
-//           method: 'GET',
-//           isArray: true
-//         }
-//       });
-//     }
-//   ]);
