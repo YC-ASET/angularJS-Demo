@@ -70,7 +70,7 @@ function tableController($scope, HttpService) {
                     data: "suborgId", 
                     name: "location",
                     fnCreatedCell: function (cell, cellData, rowData, rowIndex, colIndex) {
-                        $(cell).html(`<a href='#!/maps/suborgId/${rowData.suborgId}'>View on Map</a>`);
+                        $(cell).html(`<a href='#!/maps/suborgId/${rowData.suborgId}'>View All on Map</a>`);
                     }
                 },
                 
@@ -164,7 +164,7 @@ function tableController($scope, HttpService) {
             tableRows += `<tr>
                             <td>${e.facilityName}</td>
                             <td>${e.coordinate.x}, ${e.coordinate.y}</td>
-                            <td><a href='#!/maps/facilityId/${e.facilityId}'>View on Map</a></td>
+                            <td><a href='#!/maps/facility/${e.facilityName}/${e.coordinate.y}/${e.coordinate.x}'>View on Map</a></td>
                           </tr>`
         })
 

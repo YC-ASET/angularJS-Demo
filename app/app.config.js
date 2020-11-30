@@ -4,7 +4,7 @@ angular.module('demoApp')
 .config(['$routeProvider',
     function config($routeProvider) {
         $routeProvider
-            .when('/maps/facilityId/:facilityId', {
+            .when('/maps/facility/:facilityName/:lat/:lon', {
                 template: '<maps></maps>'
             })
             .when('/maps/suborgId/:suborgId', {

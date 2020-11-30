@@ -7,16 +7,43 @@ angular.module('maps')
     })
 
 function mapsController($scope, $routeParams, HttpService) {
-    $scope.suborgId = $routeParams.suborgId;
-    $scope.facilities;
 
-    // 
-    HttpService.getFacilitiesBySuborgId($scope.suborgId)
-        .then(response => {
-            console.log(response.data);
-            let facilitiesData = response.data
-            drawMap(facilitiesData)
-        })
+    // check $routeParams contain array of facilities or single facility, then use switch statement
+    if ($routeParams.hasOwnProperty('suborgId')) {
+        handleMultipleFacilities();
+    } else {
+        handleSingleFacility();
+    }
+
+
+    function handleMultipleFacilities() {
+        $scope.suborgId = $routeParams.suborgId;
+        $scope.facilities;
+    
+        HttpService.getFacilitiesBySuborgId($scope.suborgId)
+            .then(response => {
+                console.log(response.data);
+                let facilitiesData = response.data
+                drawMap(facilitiesData);
+            })
+    }
+
+    function handleSingleFacility() {
+        console.log($routeParams.facilityName)
+        console.log($routeParams.lat)
+        console.log($routeParams.lon)
+        let data = [];
+
+        function FacilityObj(name, lat, lon) {
+            this.facilityName = name;
+            this.coordinate = {"x": lon, "y": lat}
+        }
+
+        data[0] = new FacilityObj($routeParams.facilityName, $routeParams.lat, $routeParams.lon)
+
+        drawMap(data);
+    }
+
 
 
     function drawMap(facilitiesData) {
@@ -45,18 +72,13 @@ function mapsController($scope, $routeParams, HttpService) {
 
             let group = L.featureGroup(markers).addTo(mymap)
 
-            // promise
+            // promise ??
             // setTimeout(() => {
             //     mymap.fitBounds(group.getBounds())
             // }, 1000)
 
             mymap.fitBounds(group.getBounds())
-
-
         }
-
         plotPoints(facilitiesData);
-
-
     }
 }
